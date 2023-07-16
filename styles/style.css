@@ -17,10 +17,21 @@
   src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
 }
 html, body {
-  background-color: #1d280b;
+  background-image: url(../images/Главная\ картинка.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   padding: 0;
   margin: 0;
   overflow-x: clip;
+  scroll-behavior: smooth;
+}
+html .blur, body .blur {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  height: 100%;
+  width: 100%;
 }
 
 a {
@@ -42,10 +53,6 @@ header {
   padding-bottom: 50px;
   width: 100%;
   height: auto;
-  background-image: url(../images/Главная\ картинка.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 header .header_navbar {
   width: 100%;
@@ -107,7 +114,7 @@ header .header_main {
 }
 header .header_main .header_main_info {
   display: flex;
-  width: 40%;
+  width: 90%;
 }
 header .header_main .header_main_info .main_info_title {
   width: 80%;
@@ -146,15 +153,12 @@ header .header_main .header_main_info .main_info_title a i {
   margin-left: 10px;
 }
 header .header_main .header_main_info .main_info_title .main_title_cards {
-  display: grid;
-  grid-template-columns: repeat(2, 55%);
-  grid-template-rows: repeat(2, 45%);
-  row-gap: 10px;
-  -moz-column-gap: 25px;
-       column-gap: 25px;
+  display: flex;
+  flex-direction: column;
   margin-top: 10%;
 }
 header .header_main .header_main_info .main_info_title .main_title_cards .card {
+  margin-top: 10px;
   border-radius: 5px;
   padding-left: 10px;
   background: linear-gradient(90deg, #1d400a 0%, rgba(23, 64, 10, 0.11) 100%, rgb(23, 64, 10));
@@ -164,6 +168,9 @@ header .header_main .header_main_info .main_info_title .main_title_cards .card {
     width: 80%;
     align-items: center;
     text-align: center;
+  }
+  header .header_main .header_main_info .main_info_title .main_title_cards {
+    width: 100%;
   }
 }
 @media (max-width: 425px) {
@@ -333,7 +340,6 @@ header .menu .social_media a i {
 main {
   position: relative;
   width: auto;
-  background-color: rgb(52, 52, 52);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -354,13 +360,8 @@ main .desicions .text {
   width: fit-content;
   margin: 100px auto;
 }
-main .desicions .text:nth-child(2) {
-  margin: 0 auto;
-}
-main .desicions .text h1, main .desicions .text h2 {
-  color: #fff;
-}
 main .desicions .text h1 {
+  color: #fff;
   font-size: 40px;
   line-height: 45px;
   margin: 0 10px;
@@ -368,14 +369,6 @@ main .desicions .text h1 {
 }
 main .desicions .text h1:nth-child(2) {
   color: orange;
-}
-main .desicions .text h2 {
-  font-size: 25px;
-  margin: 0 8px;
-  font-family: "Montserrat-light";
-}
-main .desicions .text h2:nth-child(2) {
-  color: #ff994b;
 }
 main .desicions .desicion_cards {
   width: 90%;
@@ -496,18 +489,7 @@ main .desicions .hidden {
   }
   main .desicions .text {
     margin: 0 auto;
-  }
-  main .desicions .text h1 {
-    font-size: 30px;
-    margin: 0 2px;
-  }
-  main .desicions .text h2 {
-    font-size: 20px;
-    margin: 0 1px;
-    line-height: 50px;
-  }
-  main .desicions .text:nth-child(2) {
-    margin: 0 auto;
+    flex-direction: column;
   }
 }
 @media (max-width: 550px) {
@@ -520,32 +502,6 @@ main .desicions .hidden {
   }
   main .desicions .desicion_cards .card .card_title button {
     font-size: 20px;
-  }
-}
-@media (max-width: 425px) {
-  main .desicions .text h1 {
-    font-size: 21px;
-    margin: 0;
-  }
-  main .desicions .text h2 {
-    font-size: 11px;
-    margin: 0;
-  }
-}
-@media (max-width: 320px) {
-  main .desicions .text {
-    flex-direction: column;
-  }
-  main .desicions .text h1 {
-    font-size: 25px;
-    line-height: 35px;
-  }
-  main .desicions .text h1:nth-child(2) {
-    font-size: 28px;
-  }
-  main .desicions .text h2 {
-    font-size: 14px;
-    line-height: 20px;
   }
 }
 @media (max-width: 425px) {
@@ -574,6 +530,12 @@ main .job_imgs .imgs_title h1:first-child {
 }
 main .job_imgs .imgs_title h1:nth-child(2) {
   color: orange;
+}
+@media (max-width: 450px) {
+  main .job_imgs .imgs_title {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 main .job_imgs .image_cards {
   width: 100%;
@@ -635,31 +597,23 @@ main .job_imgs .image_cards .img_card .card_bg .card_title h2 {
     height: 100%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 320px) {
+  main .job_imgs .image_cards {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  main .job_imgs .image_cards .img_card {
+    height: 30%;
+  }
+}
+@media (max-width: 425px) {
   main .job_imgs {
-    height: 200vh;
+    height: 160vh;
   }
 }
 
 footer {
-  background-image: url(../images/Главная\ картинка.png);
   width: 100%;
   height: auto;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-footer .blur {
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
-  height: 100%;
-  width: 100%;
-  padding-top: 150px;
-}
-footer .blur .footer_container {
-  text-align: center;
-  width: 80%;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
 }/*# sourceMappingURL=style.css.map */

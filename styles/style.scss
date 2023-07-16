@@ -15,11 +15,20 @@
     src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
 }
 html,body{
-    background-color: #1d280b;
+    background-image: url(../images/Главная\ картинка.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 0;
     margin: 0;
     overflow-x: clip;
-
+    scroll-behavior: smooth;
+    .blur{
+        backdrop-filter: blur(5px);
+        height: 100%;
+        width: 100%;
+    }
 }
 a{
     text-decoration: none;
@@ -38,10 +47,6 @@ header{
     padding-bottom: 50px;
     width: 100%;
     height: auto;
-    background-image: url(../images/Главная\ картинка.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     .header_navbar{
         width: 100%;
         display: flex;
@@ -103,7 +108,7 @@ header{
         position: relative;
         .header_main_info{
             display: flex;
-            width: 40%;
+            width: 90%;
             .main_info_title{
                 width: 80%;
                 color: #fff;
@@ -140,18 +145,17 @@ header{
                
                 
                 .main_title_cards{
-                    display: grid;
-                    grid-template-columns: repeat(2,55%);
-                    grid-template-rows: repeat(2, 45%);
-                    row-gap: 10px;
-                    column-gap: 25px;
+                    display: flex;
+                    flex-direction: column;
                     margin-top: 10%;
                     .card{
+                        margin-top: 10px;
                         border-radius: 5px; 
                         padding-left: 10px;
                         background: linear-gradient(90deg, #1d400a 0%, rgb(23, 64, 10, 0.11) 100%, rgb(23, 64, 10) );
                     }
                 }
+
             }
             
             @media ( max-width:768px){
@@ -159,6 +163,9 @@ header{
                     width: 80%;
                     align-items: center;
                     text-align: center;
+                    .main_title_cards{
+                        width:100%;
+                    }
                 }
             }   
             @media (max-width:425px){
@@ -334,7 +341,6 @@ header{
 main{
     position: relative;
     width: auto;
-    background-color: rgb(52, 52, 52);
     height: fit-content;
     padding-top: 100px; 
     color: #fff;
@@ -348,28 +354,14 @@ main{
             align-items: center;
             width: fit-content;
             margin: 100px auto;
-            &:nth-child(2){
-                margin: 0 auto;
-            }
-            h1,h2{
-                color: #fff;
-            }
             h1{
+                color: #fff;
                 font-size: 40px;
                 line-height: 45px;
                 margin: 0 10px;  
                 font-family: "Montserrat-bold";
                 &:nth-child(2){
                     color: orange;
-                }
-            }
-           
-            h2{
-                font-size: 25px;
-                margin: 0 8px;
-                font-family: "Montserrat-light";
-                &:nth-child(2){
-                    color: #ff994b;
                 }
             }
             
@@ -385,7 +377,6 @@ main{
             height: auto;
             .card{
                 width: 90%;
-                // box-shadow: rgb(211, 211, 211) 0px 10px 50px 11px;
                 height: 100%;
                 background-color: #d2d2d2;
                 display: flex;
@@ -491,18 +482,7 @@ main{
             }
             .text{
                 margin: 0 auto;
-                h1{
-                    font-size: 30px;
-                    margin: 0 2px;
-                }
-                h2{
-                    font-size: 20px;
-                    margin: 0 1px;
-                    line-height: 50px;
-                }
-                &:nth-child(2){
-                    margin: 0 auto;
-                }
+                flex-direction: column;
             }
         }
         @media (max-width:550px){
@@ -518,36 +498,6 @@ main{
                     }
                 }
             }
-        }
-        @media (max-width:425px){
-            .text{
-                h1{
-                    font-size: 21px;
-                    margin: 0;
-                }
-                h2{
-                    font-size: 11px;
-                    margin: 0;
-                }
-            }
-            
-        }
-        @media (max-width:320px) {
-            .text{
-                flex-direction: column;
-                h1{
-                    font-size: 25px;
-                    line-height: 35px;
-                    &:nth-child(2){
-                        font-size: 28px;
-                    }
-                }
-                h2{
-                    font-size: 14px;
-                    line-height: 20px;
-                }
-            }
-            
         }
 
     }
@@ -575,6 +525,13 @@ main{
                 &:nth-child(2){
                     color: orange;
                 }
+            }
+
+        }
+        @media (max-width:450px) {
+            .imgs_title{
+                flex-direction: column;
+                align-items: center;
             }
         }
         .image_cards{
@@ -628,7 +585,9 @@ main{
                         }
                     }
                 }  
+                
             }
+            
             
         }
         @media (max-width:768px) {
@@ -636,37 +595,31 @@ main{
                 display: flex;
                 flex-direction: column;
                 height: 100%;
+                
+            }
+        }
+        @media (max-width:320px) {
+            .image_cards{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                .img_card{
+                    height: 30%;
+                }
             }
         }
         
     } 
-    @media (max-width:768px) {
+    @media (max-width:425px) {
         .job_imgs{
-            height: 200vh;
+            height: 160vh;
         }
     }
+    
 }
 
 // FOOTER
 footer{
-    background-image: url(../images/Главная\ картинка.png);
     width: 100%;
-    height: auto;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-    .blur{
-        backdrop-filter: blur(15px);
-        height: 100%;
-        width: 100%;
-        padding-top: 150px;
-        .footer_container {
-            text-align: center;
-            width: 80%;
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-    }
+    height: auto;  
 }
