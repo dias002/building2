@@ -158,6 +158,7 @@ header .header_main .header_main_info .main_info_title .main_title_cards {
   margin-top: 10%;
 }
 header .header_main .header_main_info .main_info_title .main_title_cards .card {
+  font-size: 25px;
   margin-top: 10px;
   border-radius: 5px;
   padding-left: 10px;
@@ -481,8 +482,8 @@ main .desicions .hidden {
 }
 @media (max-width: 768px) {
   main .desicions .desicion_cards {
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(3, 33%);
+    display: flex;
+    flex-direction: column;
   }
   main .desicions .desicion_cards .card {
     margin: 0 auto;
@@ -504,7 +505,7 @@ main .desicions .hidden {
     font-size: 20px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 505px) {
   main .desicions {
     width: 95%;
   }
@@ -607,7 +608,7 @@ main .job_imgs .image_cards .img_card .card_bg .card_title h2 {
     height: 30%;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 767.9px) {
   main .job_imgs {
     height: 160vh;
   }
@@ -616,4 +617,9 @@ main .job_imgs .image_cards .img_card .card_bg .card_title h2 {
 footer {
   width: 100%;
   height: auto;
+  text-align: center;
+}
+footer .footer_container {
+  margin-top: 100px;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
