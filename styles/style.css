@@ -17,15 +17,14 @@
   src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
 }
 html, body {
-  background-image: url(../images/Главная\ картинка.png);
-  background-position: top;
+  background-image: url(../images/afcc3098287541.5ed8c6b7423fd.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   padding: 0;
   margin: 0;
   overflow-x: clip;
-  scroll-behavior: smooth;
 }
 html .blur, body .blur {
   -webkit-backdrop-filter: blur(5px);
