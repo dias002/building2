@@ -12,7 +12,6 @@ modalButtons.forEach(function(item){
         const modalId = this.dataset.modalBtn;
         const modal = document.querySelector('#' + modalId);
         modal.classList.remove('hidden')
-
         modal.querySelector('.window').addEventListener('click', function(e){
             e.stopPropagation();
         })
