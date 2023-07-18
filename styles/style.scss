@@ -41,6 +41,11 @@ h1,h2,h3,h4{
     width: 80%;
     margin: 0 auto;
 }
+@media (max-width:320px) {
+    .container{
+        width: 95%;
+    }
+}
 // HEADER///
 header{ 
     padding-bottom: 50px;
@@ -229,42 +234,6 @@ header{
                     transition: .3s;
                 }
                 
-                [data-tooltip]::after {
-                    content: attr(data-tooltip); /* Выводим текст */
-                  }
-                  [data-tooltip]::after {
-                    opacity: 0;
-                  }[data-tooltip]::after {
-                    transition: .3s;
-                  }[data-tooltip]::after {
-                    pointer-events: none;
-                  }[data-tooltip]:hover::after {
-                    opacity: 1;
-                  }[data-tooltip] {
-                    position: absolute; 
-                    top: 40px;
-                    right: 5px;
-                    width: 150px;
-                    height: 100px;
-                    color: orange;
-                   }
-                   [data-tooltip]::after {
-                    content: attr(data-tooltip); /* Выводим текст */
-                    position: absolute; /* Абсолютное позиционирование */
-                    left: -100px; top: 40px; /* Положение подсказки */
-                    background: #108e51; /* Синий цвет фона */
-                    color: #fff; /* Цвет текста */
-                    padding: 0.5em; /* Поля вокруг текста */
-                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
-                    pointer-events: none; /* Подсказка */
-                    opacity: 0; /* Подсказка невидима */
-                    transition: .5s; /* Время появления подсказки */
-                    border-radius: 40px;
-                   } 
-                   [data-tooltip]:hover::after {
-                    opacity: .7; /* Показываем подсказку */
-                    top: 2em; /* Положение подсказки */
-                   }
             }
             
         }
@@ -626,5 +595,28 @@ footer{
     .footer_container{
         margin-top: 100px;
         color: #fff;
+        .footer_title{
+            display: flex;
+            align-items: center;
+            margin: 20px auto;
+            width: fit-content;
+            h1{
+                color: #ffffff;
+                font-size: 40px;
+                margin-left: 10px;
+                font-family: "Montserrat-bold";
+                &:nth-child(2){
+                    color: #ff994b;
+                }
+            }
+        }
+        @media (max-width:320px) {
+            .footer_title{
+                flex-direction: column;
+            }
+        }
+        .footer_description{
+            font-size: 35px;
+        }
     } 
 }
