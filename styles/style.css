@@ -16,7 +16,7 @@
   src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
 }
 html, body {
-  background-image: url(../images/afcc3098287541.5ed8c6b7423fd.jpg);
+  background-image: url(../images/body_img.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,12 +24,6 @@ html, body {
   padding: 0;
   margin: 0;
   overflow-x: clip;
-}
-html .blur, body .blur {
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  height: 100%;
-  width: 100%;
 }
 
 a {
@@ -116,7 +110,7 @@ header .header_main {
 }
 header .header_main .header_main_info {
   display: flex;
-  width: 90%;
+  width: 100%;
 }
 header .header_main .header_main_info .main_info_title {
   width: 80%;
@@ -166,14 +160,19 @@ header .header_main .header_main_info .main_info_title .main_title_cards .card {
   padding-left: 10px;
   background: linear-gradient(90deg, #1d400a 0%, rgba(23, 64, 10, 0.11) 100%, rgb(23, 64, 10));
 }
+header .header_main .header_main_info .main_info_title .main_title_cards .card p {
+  font-size: 20px;
+}
 @media (max-width: 768px) {
   header .header_main .header_main_info .main_info_title {
-    width: 80%;
+    width: 100%;
     align-items: center;
     text-align: center;
   }
   header .header_main .header_main_info .main_info_title .main_title_cards {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (max-width: 425px) {
@@ -218,18 +217,20 @@ header .header_main .header_main_play {
   display: flex;
   align-items: center;
 }
-header .header_main .header_main_play a {
+header .header_main .header_main_play button {
   border-radius: 50%;
   padding: 45px 55px 45px 55px;
   border: 1px solid orange;
+  background: transparent;
+  cursor: pointer;
 }
-header .header_main .header_main_play a i {
+header .header_main .header_main_play button i {
   font-size: 70px;
   margin: 0 auto;
   margin-left: 5px;
   color: orange;
 }
-header .header_main .header_main_play a:hover {
+header .header_main .header_main_play button:hover {
   color: #ff994b;
   background-color: #ffffff;
   transition: 0.3s;
@@ -344,7 +345,7 @@ main .desicions .desicion_cards {
 main .desicions .desicion_cards .card {
   width: 90%;
   height: 100%;
-  background-color: #d2d2d2;
+  background-color: #212121;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -358,35 +359,34 @@ main .desicions .desicion_cards .card .card_title {
   text-align: center;
 }
 main .desicions .desicion_cards .card .card_title p {
-  color: #000;
+  color: rgb(255, 255, 255);
   font-size: 18px;
   font-family: "Montserrat-bold";
 }
 main .desicions .desicion_cards .card .card_title button {
   padding: 15px 30px;
-  background-color: #c88754;
+  background-color: #ff882c;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 15px;
-  box-shadow: 0px -25px 20px 0px inset #7e502b;
   font-family: "Montserrat-bold";
   margin-top: 20px;
   border-radius: 5px;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
 }
 main .desicions .desicion_cards .card .card_title button:hover {
-  box-shadow: none;
+  background-color: #a24c0b;
   transition: 0.3s;
 }
 main .desicions .modal_window {
+  position: fixed;
   left: 0;
   top: 0;
-  right: 0;
   bottom: 0;
-  position: fixed;
+  right: 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   z-index: 100;
@@ -395,7 +395,6 @@ main .desicions .modal_window {
 main .desicions .modal_window .window {
   background-color: #fff;
   height: auto;
-  padding: 10px 10px;
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -403,19 +402,7 @@ main .desicions .modal_window .window {
   border-radius: 20px;
 }
 main .desicions .modal_window .window img {
-  width: 50%;
-}
-main .desicions .modal_window .window .window_title {
-  color: #000;
-  text-align: center;
-  width: 50%;
-  height: auto;
-  overflow-y: scroll;
-}
-main .desicions .modal_window .window .window_title a {
-  padding: 10px 20px;
-  background-color: #c88754;
-  text-decoration: none;
+  width: 100%;
 }
 @media (max-width: 550px) {
   main .desicions .modal_window .window {
@@ -500,7 +487,7 @@ main .job_imgs .imgs_title h1:nth-child(2) {
 main .job_imgs .image_cards {
   width: 100%;
   margin-top: 50px;
-  height: 60%;
+  height: 80%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(2, 50%);
@@ -510,14 +497,53 @@ main .job_imgs .image_cards .img_card {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
   position: relative;
-  background-image: url(../images/information_items_property_254476.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+main .job_imgs .image_cards .img_card:nth-child(1) {
+  background-image: url(../images/img_card1.png);
+}
+main .job_imgs .image_cards .img_card:nth-child(1) .card_bg:hover {
+  background-image: url(../images/img_change1.png);
+  transition: 0.7s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main .job_imgs .image_cards .img_card:nth-child(2) {
+  background-image: url(../images/img_card2.png);
+}
+main .job_imgs .image_cards .img_card:nth-child(2) .card_bg:hover {
+  background-image: url(../images/img_change2.png);
+  transition: 0.7s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main .job_imgs .image_cards .img_card:nth-child(3) {
+  background-image: url(../images/img_card3.png);
+}
+main .job_imgs .image_cards .img_card:nth-child(3) .card_bg:hover {
+  background-image: url(../images/img_change3.png);
+  transition: 0.7s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main .job_imgs .image_cards .img_card:nth-child(4) {
+  background-image: url(../images/img_card4.png);
+}
+main .job_imgs .image_cards .img_card:nth-child(4) .card_bg:hover {
+  background-image: url(../images/img_change4.png);
+  transition: 0.7s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 main .job_imgs .image_cards .img_card:hover {
   transform: translate(0px, 5px);
@@ -530,13 +556,6 @@ main .job_imgs .image_cards .img_card .card_bg {
   width: 100%;
   height: 100%;
   cursor: pointer;
-}
-main .job_imgs .image_cards .img_card .card_bg:hover {
-  background-image: url(../images/etag1.jpg);
-  background-position: center;
-  transition: 0.7s;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 main .job_imgs .image_cards .img_card .card_bg .card_title {
   width: 100%;
@@ -569,22 +588,21 @@ main .job_imgs .image_cards .img_card .card_bg .card_title h2 {
 }
 @media (max-width: 767.9px) {
   main .job_imgs {
-    height: 160vh;
+    height: 190vh;
   }
 }
 
 footer {
   width: 100%;
   height: auto;
-  text-align: center;
 }
 footer .footer_container {
+  width: 100%;
   margin-top: 100px;
   color: #fff;
 }
 footer .footer_container .footer_title {
   display: flex;
-  align-items: center;
   margin: 20px auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -605,5 +623,19 @@ footer .footer_container .footer_title h1:nth-child(2) {
   }
 }
 footer .footer_container .footer_description {
-  font-size: 35px;
+  width: 80%;
+  margin: 10px auto;
+}
+footer .footer_container .footer_description h1 {
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  footer .footer_container .footer_description {
+    width: 95%;
+  }
+}
+@media (max-width: 425px) {
+  footer .footer_container .footer_description h1 {
+    font-size: 25px;
+  }
 }/*# sourceMappingURL=style.css.map */
