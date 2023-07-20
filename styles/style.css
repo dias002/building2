@@ -384,22 +384,24 @@ main .desicions .desicion_cards .card .card_title p {
   font-family: "Montserrat-bold";
 }
 main .desicions .desicion_cards .card .card_title button {
-  padding: 15px 30px;
-  background-color: #ff882c;
+  padding: 25px 30px;
+  background-color: #c88754;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 15px;
+  box-shadow: 0px -20px 20px 0px inset #7e502b;
   font-family: "Montserrat-bold";
   margin-top: 20px;
   border-radius: 5px;
-  color: rgb(0, 0, 0);
-  border: none;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  border: none;
 }
 main .desicions .desicion_cards .card .card_title button:hover {
-  background-color: #a24c0b;
   transition: 0.3s;
+  box-shadow: none;
 }
 main .desicions .modal_window {
   position: fixed;
@@ -648,6 +650,8 @@ footer .footer_container .footer_description {
 }
 footer .footer_container .footer_description h1 {
   margin-bottom: 30px;
+  font-family: "Inter";
+  font-weight: 500;
 }
 @media (max-width: 768px) {
   footer .footer_container .footer_description {
