@@ -23,3 +23,13 @@ modalClose.forEach(function(item){
         this.classList.add('hidden')
     })
 })
+const videoBtn = document.querySelector('#header_vid')
+const headerVid = document.querySelector('.header_vid')
+const videoWindow = document.querySelector('.video_window')
+videoBtn.addEventListener('click', function(){
+    headerVid.classList.remove('hidden')
+    videoWindow.classList.remove('hidden')
+})
+videoWindow.addEventListener('click', function(){
+    videoWindow.classList.add('hidden')
+})
