@@ -1,20 +1,8 @@
 * {
-  font-family: "Montserrat-reg";
   box-sizing: border-box;
+  font-family: "Inter";
 }
 
-@font-face {
-  font-family: "Montserrat-reg";
-  src: url(../fonts/Montserrat/static/Montserrat-Regular.ttf);
-}
-@font-face {
-  font-family: "Montserrat-bold";
-  src: url(../fonts/Montserrat/static/Montserrat-Bold.ttf);
-}
-@font-face {
-  font-family: "Montserrat-light";
-  src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
-}
 html, body {
   background-image: url(../images/body_img.jpg);
   background-position: center;
@@ -34,6 +22,8 @@ a {
 h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
 }
 
 .container {
@@ -126,7 +116,6 @@ header .header_main .header_main_info .main_info_title {
   margin-left: 100px;
 }
 header .header_main .header_main_info .main_info_title h1 {
-  font-family: "Lato";
   font-size: 45px;
   line-height: 55px;
 }
@@ -138,7 +127,6 @@ header .header_main .header_main_info .main_info_title a {
   width: fit-content;
   font-size: 15px;
   box-shadow: 0px -20px 20px 0px inset #7e502b;
-  font-family: "Montserrat-bold";
   margin-top: 20px;
   border-radius: 5px;
   display: flex;
@@ -256,8 +244,19 @@ header .header_main .header_main_play .video_window video {
   width: 70%;
 }
 @media (max-width: 768px) {
+  header .header_main {
+    flex-direction: column;
+  }
   header .header_main .header_main_play {
-    display: none;
+    margin: 30px auto;
+    width: auto;
+  }
+  header .header_main .header_main_play .video_window {
+    transform: translate(-50%, -40%);
+  }
+  header .header_main .header_main_play .video_window video {
+    width: 100%;
+    height: 200%;
   }
 }
 header .menu {
@@ -292,7 +291,6 @@ header .menu nav ul li {
 }
 header .menu nav ul li a {
   font-size: 30px;
-  font-family: "Montserrat-bold";
 }
 header .menu .social_media {
   display: flex;
@@ -346,7 +344,6 @@ main .desicions .text h1 {
   font-size: 40px;
   line-height: 45px;
   margin: 0 10px;
-  font-family: "Montserrat-bold";
 }
 main .desicions .text h1:nth-child(2) {
   color: orange;
@@ -381,7 +378,6 @@ main .desicions .desicion_cards .card .card_title {
 main .desicions .desicion_cards .card .card_title p {
   color: rgb(255, 255, 255);
   font-size: 18px;
-  font-family: "Montserrat-bold";
 }
 main .desicions .desicion_cards .card .card_title button {
   padding: 25px 30px;
@@ -391,7 +387,6 @@ main .desicions .desicion_cards .card .card_title button {
   width: fit-content;
   font-size: 15px;
   box-shadow: 0px -20px 20px 0px inset #7e502b;
-  font-family: "Montserrat-bold";
   margin-top: 20px;
   border-radius: 5px;
   display: flex;
@@ -492,7 +487,6 @@ main .job_imgs .imgs_title {
 main .job_imgs .imgs_title h1 {
   font-size: 40px;
   margin-left: 7px;
-  font-family: "Montserrat-bold";
 }
 main .job_imgs .imgs_title h1:first-child {
   margin: 0;
@@ -634,7 +628,6 @@ footer .footer_container .footer_title h1 {
   color: #ffffff;
   font-size: 40px;
   margin-left: 10px;
-  font-family: "Montserrat-bold";
 }
 footer .footer_container .footer_title h1:nth-child(2) {
   color: #ff994b;
@@ -650,7 +643,6 @@ footer .footer_container .footer_description {
 }
 footer .footer_container .footer_description h1 {
   margin-bottom: 30px;
-  font-family: "Inter";
   font-weight: 500;
 }
 @media (max-width: 768px) {
