@@ -1,5 +1,7 @@
 let menuBtn = document.querySelector('.menu_burger');
 let menu = document.querySelector('.menu');
+
+
 menuBtn.addEventListener('click', function(){
 	menu.classList.toggle('active');
     menuBtn.classList.toggle('active');
@@ -7,6 +9,8 @@ menuBtn.addEventListener('click', function(){
 
 const modalButtons = document.querySelectorAll('[data-modal-btn]')
 const modalClose = document.querySelectorAll('[data-modal]')
+
+
 modalButtons.forEach(function(item){
     item.addEventListener('click', function(){
         const modalId = this.dataset.modalBtn;
@@ -23,7 +27,7 @@ modalClose.forEach(function(item){
         this.classList.add('hidden')
     })
 })
-const videoBtn = document.querySelector('#header_vid')
+const videoBtn = document.querySelector('.header_btn')
 const headerVid = document.querySelector('.header_vid')
 const videoWindow = document.querySelector('.video_window')
 videoBtn.addEventListener('click', function(){
